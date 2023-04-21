@@ -56,3 +56,24 @@ Called by handle_fn:
         std::iter::Iterator::next
 # ...
 ```
+
+## vscode
+打开你的 settings.json（用户的，不是这个项目的）, 加入如下内容
+```
+{
+    ...
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    ...
+    "rust-analyzer.rustc.source": "discover",
+    ...
+    "rust-analyzer.check.noDefaultFeatures": null
+}
+```
+
+然后确保 Cargo.toml 里有
+```
+[package.metadata.rust-analyzer]
+rustc_private=true
+```

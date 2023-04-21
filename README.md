@@ -57,6 +57,21 @@ Called by handle_fn:
 # ...
 ```
 
+## 运行选项
+* ONLY_LOCAL：忽略别的 crate
+```
+$ export ONLY_LOCAL=y
+$ ./target/debug/mircallgraph ... src/lib.rs ...
+
+Called by rustc_cb_entry:
+        is_fn_with_mir
+        handle_fn
+Called by handle_fn:
+        terminator_to_callee
+Called by is_fn_with_mir:
+Called by terminator_to_callee:
+```
+
 ## vscode
 打开你的 settings.json（用户的，不是这个项目的）, 加入如下内容
 ```
